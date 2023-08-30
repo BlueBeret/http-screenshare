@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Screen Sharing with Flask and VidStream</title>
+</head>
+<body>
+    <img src="{{ url_for('video_feed2') }}" style="width: 100%;" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* make cover */
+            object-fit: contain;
+        }
+    </style>
+    <script>
+        // fullscreen
+        document.addEventListener('click', function() {
+            var elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+
+
+</html>
